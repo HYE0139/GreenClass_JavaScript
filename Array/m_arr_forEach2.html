@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        const arr = [
+            { name: '홍길동', kor: 90, eng:100, math: 95 },
+            { name: '유관순', kor: 100, eng:80, math: 90 },
+            { name: '장보고', kor: 80, eng:98, math: 91 },
+        ];
+
+        const tbody = document.querySelector('tbody');
+        const scoreSumObj = {
+            kor : 0,
+            eng : 0,
+            math : 0,
+            total : 0,
+        };
+
+        arr.forEach(item => {
+            const tr = document.createElement('tr');
+            tbody.append(tr);
+
+            const ScoreSum = item.kor + item.eng + item.math;
+            scoreSumObj.kor += item.kor;
+            scoreSumObj.eng += item.eng;
+            scoreSumObj.math += item.math;
+            scoreSumObj.total += ScoreSum;
+
+            tr.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.kor}</td>
+            <td>${item.eng}</td>
+            <td>${item.math}</td>
+            <td>${ScoreSum}</td>
+            `;
+        });
+        
+        const tr = document.createElement('tr');
+        tbody.append(tr);
+        tr.innerHTML = `
+            <td>Total</td>
+            <td>${scoreSumObj.kor}</td>
+            <td>${scoreSumObj.eng}</td>
+            <td>${scoreSumObj.math}</td>
+            <td>${scoreSumObj.total}</td>
+        `;
+
+    </script>
+</body>
+</html>
