@@ -5,7 +5,7 @@ const arr2 = arr.filter(item => {
     // 그래서 return 값이 있다. 
 });
 
-console.log(arr2);
+console.log(arr2); // [ 33, 66, 99 ]
 
 // ----- MISSION -----
 // filter를 활용하여 짝수만 있는 배열 arr2 를 만드시오.
@@ -14,4 +14,4 @@ const arr4 = arr3.filter(item => {
     return item % 2 === 0;
 });
 
-console.log(arr4);
+console.log(arr4); // [ 22, 44, 66, 88 ]
